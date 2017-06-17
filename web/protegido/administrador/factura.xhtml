@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../plantillas/general.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+
+        <h:form id="frmfactura">
+            <p:panel id="pnlfactura">
+
+                <p:dataTable var="car" value="#{cFactura.lista}">
+                    <p:column headerText="id">
+                        <h:outputText value="#{car.numerofac}" />
+                    </p:column>
+
+                    <p:column headerText="id_cliente">
+                        <h:outputText value="#{car.id}" />
+                    </p:column>
+
+                    <p:column headerText="fecha">
+                        <h:outputText value="#{car.fecha}" />
+                    </p:column>
+
+                    <p:column headerText="subtotal">
+                        <h:outputText value="#{car.subtotal}" />
+                    </p:column>
+                    
+                    <p:column headerText="iva">
+                        <h:outputText value="#{car.iva}" />
+                    </p:column>
+                    
+                    <p:column headerText="total">
+                        <h:outputText value="#{car.total}" />
+                    </p:column>
+                    
+                    <f:facet name="footer">
+                        <p:commandButton
+                        id="btnnuevo"   >                            
+                        </p:commandButton>                        
+                    </f:facet>
+                </p:dataTable>
+
+            </p:panel>
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
